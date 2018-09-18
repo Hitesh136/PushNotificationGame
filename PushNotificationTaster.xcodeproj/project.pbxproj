@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D0D09AF214C1DFE009B3EA6 /* CustomUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D09AE214C1DFE009B3EA6 /* CustomUserDefault.swift */; };
+		9D2734B02151691D001857F4 /* doraemon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D2734AF2151691C001857F4 /* doraemon.mp3 */; };
 		9D858877214D130C00854BFB /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D858876214D130C00854BFB /* CustomAlertController.swift */; };
 		9D9E485D214CCF1600BD55EC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E485C214CCF1600BD55EC /* Constant.swift */; };
 		9D9E4861214CD76000BD55EC /* CustomLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E4860214CD76000BD55EC /* CustomLogs.swift */; };
@@ -28,6 +29,7 @@
 		9D023A97214CCD9C006C5BC6 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D023A99214CCD9C006C5BC6 /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjcExceptionBridging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0D09AE214C1DFE009B3EA6 /* CustomUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefault.swift; sourceTree = "<group>"; };
+		9D2734AF2151691C001857F4 /* doraemon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doraemon.mp3; sourceTree = "<group>"; };
 		9D858876214D130C00854BFB /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 		9D9E485C214CCF1600BD55EC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		9D9E485E214CD1D600BD55EC /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 		9D858875214D128200854BFB /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				9D2734AF2151691C001857F4 /* doraemon.mp3 */,
 				9DDFBB28214AC50E009A8FB0 /* LaunchScreen.storyboard */,
 				9DDFBB20214AC50D009A8FB0 /* Main.storyboard */,
 			);
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DDFBB2A214AC50E009A8FB0 /* LaunchScreen.storyboard in Resources */,
+				9D2734B02151691D001857F4 /* doraemon.mp3 in Resources */,
 				9DFE88A3214B508F00C9586D /* GoogleService-Info.plist in Resources */,
 				9DDFBB27214AC50E009A8FB0 /* Assets.xcassets in Resources */,
 				9DDFBB22214AC50D009A8FB0 /* Main.storyboard in Resources */,

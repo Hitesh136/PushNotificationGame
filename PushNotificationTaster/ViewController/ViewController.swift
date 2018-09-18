@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var lblPushCount: UILabel!
+    @IBOutlet weak var lblThumbCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
     func setPushNotificationData() {
         lblPushCount.text = String(UserDefaults.pushCount)
         
+        lblThumbCount.text =  String(format: "👍 %@", String(UserDefaults.thumpCount)) 
     }
 
 }

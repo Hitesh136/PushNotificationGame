@@ -29,11 +29,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APN" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRG-A6-Q6T">
+                                <rect key="frame" x="117" y="225.5" width="258" height="161.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="135"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Gi-fG-arP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CK9-Tr-B6P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Gi-fG-arP" secondAttribute="baseline" id="K8R-cn-BgA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xRG-A6-Q6T" secondAttribute="trailing" id="NYu-PZ-qFa"/>
+                            <constraint firstItem="xRG-A6-Q6T" firstAttribute="top" secondItem="5MI-dw-Aoi" secondAttribute="bottom" id="WcT-K8-wh9"/>
+                            <constraint firstItem="xRG-A6-Q6T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WrO-ov-8L8"/>
                             <constraint firstItem="5MI-dw-Aoi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ebk-rS-fRh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5MI-dw-Aoi" secondAttribute="trailing" id="v53-6Q-Jgn"/>
                         </constraints>
@@ -42,6 +51,7 @@
                     <navigationItem key="navigationItem" id="RfY-sn-9Cb"/>
                     <connections>
                         <outlet property="lblPushCount" destination="5MI-dw-Aoi" id="dLX-u2-PXP"/>
+                        <outlet property="lblThumbCount" destination="xRG-A6-Q6T" id="ctF-av-byN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

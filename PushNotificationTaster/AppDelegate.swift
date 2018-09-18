@@ -11,21 +11,16 @@ import CoreData
 import UserNotifications
 import SafariServices
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var viewActionIdentifier = "ViewActionIdentifier"
     var viewCategorieIdemtifier = "VIEW"
-    
     let openURLIdentifier = "openURLIdentifier"
-    let openURLCategory = "OPEN_URL"
-    
     let ignoreActionIdentifier = "ignoreActionIdentifier"
-    let ignoreURLCategory = "ignoreActionCatagory"
-    
     let thumpsUpAction = "Thumps up Action"
-    let thumpsUPCategory = "Thumps up catagory"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -41,23 +36,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             myLog("Notification Authorization granted")
             
             //Category View
-            let viewAction = UNNotificationAction(identifier: self.viewActionIdentifier, title: "View", options: [.foreground])
-            let viewCatagories = UNNotificationCategory(identifier: self.viewCategorieIdemtifier, actions: [viewAction], intentIdentifiers: [], options: [])
+    
+            let viewAction = UNNotificationAction(identifier: self.viewActionIdentifier, title: "View", options: .foreground)
             
             //Category Open URL
-            let openURLAction = UNNotificationAction(identifier: self.openURLIdentifier, title: "Open URL 🧐", options: [.foreground])
-            let openURLCategory = UNNotificationCategory(identifier: self.viewCategorieIdemtifier, actions: [openURLAction], intentIdentifiers: [], options: [])
+            let openURLAction = UNNotificationAction(identifier: self.openURLIdentifier, title: "Open URL 🧐", options: .foreground)
             
             //Category Thumps up
-            let thumpsUPAction = UNNotificationAction(identifier: self.thumpsUpAction, title: "👍👍", options: [.foreground])
-            let thumpsUpCatagory = UNNotificationCategory(identifier: self.viewCategorieIdemtifier, actions: [thumpsUPAction], intentIdentifiers: [], options: [])
+            let thumpsUPAction = UNNotificationAction(identifier: self.thumpsUpAction, title: "👍👍", options: .foreground)
             
             //Catagory Igonre
-            let ignoreAction = UNNotificationAction(identifier: self.ignoreActionIdentifier, title: "Ignore 😡😡", options: [.destructive])
-            let ignoreCatagory = UNNotificationCategory(identifier: self.viewCategorieIdemtifier, actions: [ignoreAction], intentIdentifiers: [], options: [])
+            let ignoreAction = UNNotificationAction(identifier: self.ignoreActionIdentifier, title: "Ignore 😡😡", options: .destructive)
             
-            UNUserNotificationCenter.current().setNotificationCategories([viewCatagories, openURLCategory, thumpsUpCatagory, ignoreCatagory])
+            let viewCatagories = UNNotificationCategory(identifier: self.viewCategorieIdemtifier, actions: [viewAction, openURLAction, thumpsUPAction, ignoreAction], intentIdentifiers: [], options: [])
+            
+            UNUserNotificationCenter.current().setNotificationCategories([viewCatagories])
             self.getNotificationSetting()
+            
+            print("Testing for new")
+            print("Git")
+            print("features")
         }
         return true
     }
@@ -126,7 +124,9 @@ extension AppDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
         
         let userInfo = response.notification.request.content.userInfo
         guard let apsDict = userInfo["aps"] as? [String: AnyObject] else {
@@ -137,15 +137,28 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             return
         }
         
-        guard response.actionIdentifier == viewActionIdentifier else {
-            return
+        if response.actionIdentifier == viewActionIdentifier {
+            
+        }
+        else if response.actionIdentifier == openURLIdentifier {
+            let webViewController = SFSafariViewController(url: url)
+            if let navc = window?.rootViewController as? UINavigationController, let viewController = navc.viewControllers.first as? ViewController {
+                viewController.navigationController?.pushViewController(webViewController, animated: true)
+            }
+        }
+        else if response.actionIdentifier == thumpsUpAction {
+            UserDefaults.thumpCount = UserDefaults.thumpCount + 1
+            if let navc = window?.rootViewController as? UINavigationController, let viewController = navc.viewControllers.first as? ViewController {
+                viewController.setPushNotificationData()
+            }
         }
         
-        let webViewController = SFSafariViewController(url: url)
-        if let navc = window?.rootViewController as? UINavigationController, let viewController = navc.viewControllers.first as? ViewController {
-            
-            viewController.navigationController?.pushViewController(webViewController, animated: true)
-        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.sound, .alert, .badge])
     }
 }
 

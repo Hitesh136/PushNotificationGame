@@ -27,6 +27,15 @@ extension UserDefaults {
             UserDefaults.standard.set(newValue, forKey: "Push Count")
         }
     }
+    
+    static var thumpCount: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "Thump Count")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "Thump Count")
+        }
+    }
 }
 
 
