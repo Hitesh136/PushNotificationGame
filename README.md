@@ -1,2 +1,2 @@
 # PushNotificationGame
-Sample project using push notification
+Sample project on push notification
