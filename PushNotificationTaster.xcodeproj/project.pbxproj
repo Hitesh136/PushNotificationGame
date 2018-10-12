@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0950822152AB88001B98B8 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0950812152AB88001B98B8 /* UserNotifications.framework */; };
+		9D0950842152AB88001B98B8 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0950832152AB88001B98B8 /* UserNotificationsUI.framework */; };
+		9D0950872152AB88001B98B8 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0950862152AB88001B98B8 /* NotificationViewController.swift */; };
+		9D09508A2152AB88001B98B8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0950882152AB88001B98B8 /* MainInterface.storyboard */; };
+		9D09508E2152AB88001B98B8 /* NotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D0950802152AB87001B98B8 /* NotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9D0D09AF214C1DFE009B3EA6 /* CustomUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D09AE214C1DFE009B3EA6 /* CustomUserDefault.swift */; };
 		9D2734B02151691D001857F4 /* doraemon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D2734AF2151691C001857F4 /* doraemon.mp3 */; };
 		9D858877214D130C00854BFB /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D858876214D130C00854BFB /* CustomAlertController.swift */; };
@@ -22,12 +27,42 @@
 		DAB4747FD493848AFA98B520 /* Pods_PushNotificationTaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D047E6FD636EE3E5A4B642 /* Pods_PushNotificationTaster.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9D09508C2152AB88001B98B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DDFBB11214AC50D009A8FB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D09507F2152AB87001B98B8;
+			remoteInfo = NotificationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9D0950922152AB88001B98B8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9D09508E2152AB88001B98B8 /* NotificationExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		48D047E6FD636EE3E5A4B642 /* Pods_PushNotificationTaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushNotificationTaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBFE8B04D43900951AB2E25 /* Pods-PushNotificationTaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationTaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationTaster/Pods-PushNotificationTaster.release.xcconfig"; sourceTree = "<group>"; };
 		9D023A95214CCD96006C5BC6 /* XCGLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D023A97214CCD9C006C5BC6 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D023A99214CCD9C006C5BC6 /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjcExceptionBridging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0950802152AB87001B98B8 /* NotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0950812152AB88001B98B8 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9D0950832152AB88001B98B8 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		9D0950862152AB88001B98B8 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		9D0950892152AB88001B98B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9D09508B2152AB88001B98B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D0D09AE214C1DFE009B3EA6 /* CustomUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefault.swift; sourceTree = "<group>"; };
 		9D2734AF2151691C001857F4 /* doraemon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doraemon.mp3; sourceTree = "<group>"; };
 		9D858876214D130C00854BFB /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
@@ -49,6 +84,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9D09507D2152AB87001B98B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0950842152AB88001B98B8 /* UserNotificationsUI.framework in Frameworks */,
+				9D0950822152AB88001B98B8 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DDFBB16214AC50D009A8FB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,8 +122,20 @@
 				9D023A95214CCD96006C5BC6 /* XCGLogger.framework */,
 				9DD4347C214B5159007E6D07 /* GoogleToolboxForMac.framework */,
 				48D047E6FD636EE3E5A4B642 /* Pods_PushNotificationTaster.framework */,
+				9D0950812152AB88001B98B8 /* UserNotifications.framework */,
+				9D0950832152AB88001B98B8 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D0950852152AB88001B98B8 /* NotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9D0950862152AB88001B98B8 /* NotificationViewController.swift */,
+				9D0950882152AB88001B98B8 /* MainInterface.storyboard */,
+				9D09508B2152AB88001B98B8 /* Info.plist */,
+			);
+			path = NotificationExtension;
 			sourceTree = "<group>";
 		};
 		9D858873214D122A00854BFB /* ViewController */ = {
@@ -104,7 +160,6 @@
 		9D858875214D128200854BFB /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				9D2734AF2151691C001857F4 /* doraemon.mp3 */,
 				9DDFBB28214AC50E009A8FB0 /* LaunchScreen.storyboard */,
 				9DDFBB20214AC50D009A8FB0 /* Main.storyboard */,
 			);
@@ -115,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDFBB1B214AC50D009A8FB0 /* PushNotificationTaster */,
+				9D0950852152AB88001B98B8 /* NotificationExtension */,
 				9DDFBB1A214AC50D009A8FB0 /* Products */,
 				470E188BA6E336CB19DFF148 /* Pods */,
 				6F32EEE6E1A9BA044762F0EB /* Frameworks */,
@@ -125,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDFBB19214AC50D009A8FB0 /* PushNotificationTaster.app */,
+				9D0950802152AB87001B98B8 /* NotificationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +189,7 @@
 		9DDFBB1B214AC50D009A8FB0 /* PushNotificationTaster */ = {
 			isa = PBXGroup;
 			children = (
+				9D2734AF2151691C001857F4 /* doraemon.mp3 */,
 				9D858875214D128200854BFB /* Storyboard */,
 				9D858874214D123C00854BFB /* Supporting files */,
 				9D858873214D122A00854BFB /* ViewController */,
@@ -148,6 +206,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9D09507F2152AB87001B98B8 /* NotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D09508F2152AB88001B98B8 /* Build configuration list for PBXNativeTarget "NotificationExtension" */;
+			buildPhases = (
+				9D09507C2152AB87001B98B8 /* Sources */,
+				9D09507D2152AB87001B98B8 /* Frameworks */,
+				9D09507E2152AB87001B98B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationExtension;
+			productName = NotificationExtension;
+			productReference = 9D0950802152AB87001B98B8 /* NotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9DDFBB18214AC50D009A8FB0 /* PushNotificationTaster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DDFBB2E214AC50E009A8FB0 /* Build configuration list for PBXNativeTarget "PushNotificationTaster" */;
@@ -156,10 +231,12 @@
 				9DDFBB15214AC50D009A8FB0 /* Sources */,
 				9DDFBB16214AC50D009A8FB0 /* Frameworks */,
 				9DDFBB17214AC50D009A8FB0 /* Resources */,
+				9D0950922152AB88001B98B8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9D09508D2152AB88001B98B8 /* PBXTargetDependency */,
 			);
 			name = PushNotificationTaster;
 			productName = PushNotificationTaster;
@@ -176,6 +253,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Hitesh  Agarwal";
 				TargetAttributes = {
+					9D09507F2152AB87001B98B8 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					9DDFBB18214AC50D009A8FB0 = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
@@ -203,11 +283,20 @@
 			projectRoot = "";
 			targets = (
 				9DDFBB18214AC50D009A8FB0 /* PushNotificationTaster */,
+				9D09507F2152AB87001B98B8 /* NotificationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9D09507E2152AB87001B98B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D09508A2152AB88001B98B8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DDFBB17214AC50D009A8FB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +333,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9D09507C2152AB87001B98B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0950872152AB88001B98B8 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DDFBB15214AC50D009A8FB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,7 +357,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9D09508D2152AB88001B98B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D09507F2152AB87001B98B8 /* NotificationExtension */;
+			targetProxy = 9D09508C2152AB88001B98B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		9D0950882152AB88001B98B8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D0950892152AB88001B98B8 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		9DDFBB20214AC50D009A8FB0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +393,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9D0950902152AB88001B98B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M8HBL5W4VV;
+				INFOPLIST_FILE = NotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.hiteshApnTest.NotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D0950912152AB88001B98B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = NotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.hiteshApnTest.NotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9DDFBB2C214AC50E009A8FB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF3F1AEE33AE882B141B2F50 /* Pods-PushNotificationTaster.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PushNotificationTaster/PushNotificationTaster.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -420,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EBFE8B04D43900951AB2E25 /* Pods-PushNotificationTaster.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PushNotificationTaster/PushNotificationTaster.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -440,6 +595,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9D09508F2152AB88001B98B8 /* Build configuration list for PBXNativeTarget "NotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D0950902152AB88001B98B8 /* Debug */,
+				9D0950912152AB88001B98B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9DDFBB14214AC50D009A8FB0 /* Build configuration list for PBXProject "PushNotificationTaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

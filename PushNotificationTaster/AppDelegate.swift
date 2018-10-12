@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         //Check if launch by notification tap
-       
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { ( granted, error) in
             guard granted else {
@@ -60,31 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        myLog(userInfo)
-       if let absDict = userInfo["aps"] as? [String: Any] {
-        if let _ = absDict["content-available"] as? Int {
-            UserDefaults.pushCount = UserDefaults.pushCount + 1
-            if let navc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController, let rootViewController = navc.viewControllers.first as? ViewController {
-                rootViewController.setPushNotificationData()
-            }
-        }
-        else if let message = absDict["alert"] as? String {
-                myLog(message)
-                if let customAlertController = CustomAlertController.create(title: message, subtitle: "") {
-                    if let navc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController, let rootViewController = navc.viewControllers.first {
-                        rootViewController.navigationController?.pushViewController(customAlertController, animated: true)
-                    }
-                }
-            }
-        }
-    }
-    
     func applicationWillEnterForeground(_ application: UIApplication) {
         if let navc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController, let rootViewController = navc.viewControllers.first as? ViewController {
             rootViewController.setPushNotificationData()
         }
+        removeDeliveredNotification()
     }
     
     //Register for device token
@@ -120,6 +99,16 @@ extension AppDelegate {
             }
         }
     }
+    
+    func removeDeliveredNotification() {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        
+        UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
+            notifications.forEach({ (notification) in
+                
+            })
+        }
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -137,6 +126,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             return
         }
         
+        UserDefaults.thumpCount = 99
         if response.actionIdentifier == viewActionIdentifier {
             
         }
@@ -158,7 +148,40 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        UserDefaults.thumpCount = UserDefaults.thumpCount + 1
+        if let absDict = userInfo["aps"] as? [String: Any] {
+            if let contentAvailable = absDict["content-available"] as? Int, contentAvailable == 1 {
+                if let navc = window?.rootViewController as? UINavigationController, let viewController = navc.viewControllers.first as? ViewController {
+                    viewController.setPushNotificationData()
+                }
+            }
+        }
+        if let navc = window?.rootViewController as? UINavigationController, let viewController = navc.viewControllers.first as? ViewController {
+            viewController.setPushNotificationData()
+        }
         completionHandler([.sound, .alert, .badge])
+    }
+    
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        myLog(userInfo)
+        if let absDict = userInfo["aps"] as? [String: Any] {
+            if let contentAvailable = absDict["content-available"] as? Int, contentAvailable == 1 {
+                UIApplication.shared.applicationIconBadgeNumber = 222
+            }
+            else if let message = absDict["alert"] as? String {
+                myLog(message)
+                UserDefaults.pushCount = UserDefaults.pushCount + 1
+                if let customAlertController = CustomAlertController.create(title: message, subtitle: "") {
+                    if let navc = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController, let rootViewController = navc.viewControllers.first {
+                        rootViewController.navigationController?.pushViewController(customAlertController, animated: true)
+                    }
+                }
+            }
+        }
     }
 }
 
