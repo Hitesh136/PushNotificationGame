@@ -143,15 +143,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             }
         }
         
-        
-        
-        
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
+        
+        
         UserDefaults.thumpCount = UserDefaults.thumpCount + 1
         if let absDict = userInfo["aps"] as? [String: Any] {
             if let contentAvailable = absDict["content-available"] as? Int, contentAvailable == 1 {
